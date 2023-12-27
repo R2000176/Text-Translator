@@ -21,8 +21,8 @@
             <div class="menu">
 
                 <a href="{{url_for('index')}}">Home</a>
-                <a href="{{ url_for('register') }}">Register</a>
-                <a href="{{ url_for('login') }}">Login</a>
+                <a href="{{ url_for('index') }}">Register</a>
+                <a href="{{ url_for('index') }}">Login</a>
             
 
             </div>
@@ -45,7 +45,7 @@
             <input type="password" name="password" required>
             <button type="submit">Register</button>
         </form>
-        <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+        <p>Already have an account? <a href="{{ url_for('index') }}">Login</a></p>
     </div>
     </header>
 </body>
