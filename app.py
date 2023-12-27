@@ -1,21 +1,27 @@
 import requests, os, uuid, json
 from dotenv import load_dotenv
-from flask_bcrypt import Bcrypt
-
+#from flask_bcrypt import Bcrypt
 from flask import Flask, redirect, url_for, request, flash ,render_template, session
 import mysql.connector
+import bcrypt
+
+
+
+app = Flask(__name__, static_url_path='/static')
+#bcrypt = Bcrypt(app)
+
+# Use environment variable for Flask secret key
+app.secret_key = os.environ.get('FLASK_SECRET_KEY', 'random')
 
 
 # Configure MySQL connection
-mydb = mysql.connector.connect(
-    host="dbflask.mysql.database.azure.com",
-    user="translatordb",
-    password="admin@123",
-    database="text_translate"
-)
 
-app = Flask(__name__, static_url_path='/static')
-bcrypt = Bcrypt(app)
+mydb = mysql.connector.connect(
+       host="dbflask.mysql.database.azure.com",
+       user="translatordb",
+       password="admin@123",
+       database="text_translate"
+)
 
 
  # Load the values from .env    
@@ -30,6 +36,9 @@ headers = {
         'Content-type': 'application/json',
         'X-ClientTraceId': str(uuid.uuid4())
     }
+
+
+    
 
 
 
@@ -64,6 +73,7 @@ def index_post():
     translated_text = translator_response[0]['translations'][0]['text']
     
     # Fetch all translations from the database
+    
     cur = mydb.cursor()
     insert_query = "INSERT INTO translation (original_text,translated_text,target_language) VALUES (%s,%s,%s)"
     data_to_insert = (original_text,translated_text,target_language)
@@ -83,7 +93,7 @@ def index_post():
     # Call render template, passing the translated text,
     # original text, and target language to the template
     return render_template(
-        'index.html',
+        'results.html',
         original_text=original_text,
         translated_text=translated_text,
         target_language=target_language,
@@ -91,80 +101,8 @@ def index_post():
     )
 
 
-    # Route for registration page
-@app.route('/register', methods=['GET', 'POST'])
-def register():
-    if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password'].encode('utf-8')
-        hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
-
-        cur = mydb.cursor()
-        print(cur)
-        cur.execute("INSERT INTO regitration (username, password) VALUES (%s, %s)", (username, hashed_password))
-        mydb.commit()
-        cur.close()
-
-        flash('Registration successful. Please log in.', 'success')
-        return redirect(url_for('login'))
-
-    return render_template('register.html')
-
-
-# Route for login page
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    if request.method == 'POST':
-        username = request.form['username']
-        password_candidate = request.form['password'].encode('utf-8')
-
-        cur = mydb.cursor()
-        result = cur.execute("SELECT * FROM regitration WHERE username = %s", [username])
-
-        if result is not None and result > 0:
-            data = cur.fetchone()
-            password = data['password']
-
-            if bcrypt.checkpw(password_candidate, password):
-                session['logged_in'] = True
-                session['username'] = username
-                flash('Login successful!', 'success')
-                cur.close()
-                return redirect(url_for('results'))
-            else:
-                error = 'Invalid login'
-                return render_template('login.html', error=error)
-        else:
-            error = 'Username not found'
-            return render_template('login.html', error=error)
-
-    return render_template('login.html')
-
-
-     
-# Route for results page
-@app.route('/results')
-def results():
-    if not session.get('logged_in'):
-        return redirect(url_for('login'))
-
-     # Fetch all translations from the database
-    cur = mydb.cursor()
-    cur.execute("SELECT * FROM translation")
-    all_translations = cur.fetchall()
-    print('all outputs')
-    cur.close()
-
-    # Call render template, passing the translated text,
-    # original text, and target language to the template
-
-    return render_template('results.html', username=session['username'],
-                         all_translations=all_translations)
 
 if __name__ == '__main__':
-
-    # Use environment variable for Flask secret key
-    app.secret_key = os.environ.get('FLASK_SECRET_KEY', '')
     app.run(debug=True)
 
     
