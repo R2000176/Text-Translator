@@ -93,7 +93,7 @@ def index_post():
     # Call render template, passing the translated text,
     # original text, and target language to the template
     return render_template(
-        'results.html',
+        'index.html',
         original_text=original_text,
         translated_text=translated_text,
         target_language=target_language,
