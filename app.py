@@ -70,7 +70,8 @@ try:
             print("The Result : ", result)
 
             if email == result["email"] and password == result["password"]:
-                return "<div>Login Successfully!</div>"
+                   return render_template("results.html")
+
             else:
                 return render_template("login.html")
 
