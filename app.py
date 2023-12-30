@@ -21,12 +21,12 @@ app.secret_key = os.environ.get('FLASK_SECRET_KEY', 'random')
 
 # Configure MySQL connection
 
-# mydb = mysql.connector.connect(
-#        host="dbflask.mysql.database.azure.com",
-#        user="translatordb",
-#        password="admin@123",
-#        database="text_translate"
-# )
+ mydb = mysql.connector.connect(
+       host="dbflask.mysql.database.azure.com",
+       user="translatordb",
+       password="admin@123",
+       database="text_translate"
+ )
 
 
  # Load the values from .env    
