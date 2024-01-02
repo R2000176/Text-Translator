@@ -7,6 +7,7 @@
 **Project Demo URL:** [https://text--translator.azurewebsites.net/](https://text--translator.azurewebsites.net/)  
 **Demo Video URL:**  [https://drive.google.com/file/d/1Nlrc_KM9Ed9POH-7pauok_m4hyyVe5Xc/view?usp=drive_link] 
                          (https://drive.google.com/file/d/1R2OnW77QzYfuRbZpATtiZ9PBqKqtVwGp/view?usp=sharing)
+                         
 **Github Repository URL:** [https://github.com/R2000176/Text-Translator](https://github.com/R2000176/Text-Translator)  
 **Industry:** Lifestyle and Technology
 
