@@ -2,9 +2,9 @@
 <h2>Project Title: Text Translator</h2><b><a href="https://text--translator.azurewebsites.net/">Text Translator</b></a>
 <br>
 <h2>Project Details</h2>
-<b>Project Demo URL :</b> https://text--translator.azurewebsites.net/ <br>
-<!--<b>Demo Video URL :https://drive.google.com/file/d/1Nlrc_KM9Ed9POH-7pauok_m4hyyVe5Xc/view?usp=drive_link  --><br>
-<b>Github Repository URL :</b> https://github.com/R2000176/Text-Translator <br>
+<b>Project Demo URL :</b><a gref="https://text--translator.azurewebsites.net/">https://text--translator.azurewebsites.net/</a><br>
+<b>Demo Video URL :<!--https://drive.google.com/file/d/1Nlrc_KM9Ed9POH-7pauok_m4hyyVe5Xc/view?usp=drive_link  --><br>
+<b>Github Repository URL :</b><a href="https://github.com/R2000176/Text-Translator">https://github.com/R2000176/Text-Translator</a> <br>
 <b>Industry :</b> Lifestyle and Technology<br>
 <h2>Azure Services Used</h2>
 <h3>Core Azure Services:</h3>
@@ -51,25 +51,25 @@ Looking ahead, our project has exciting opportunities to grow. We plan to use ad
 <h3>Azure App Service</h3>
 <b>Description:</b><p align="justify">
 Azure App Service furnishes a scalable and dependable hosting setting for the Text Translator, guaranteeing smooth deployment and uninterrupted availability to enhance the user experience..</p>
-<!--<img src="https://github.com/pratik3155/TextAnalyzer/blob/main/Screenshots/app-service.png" alt="azure-app-service"></img><br> -->
+<img src="./screenshots/app-service.png" alt="azure-app-service"></img><br>
 
 <h3>Azure cosmos DB</h3>
 <b>Description:</b><p align="justify">The project utilizes Azure Cosmos DB as its database solution to effectively manage and store user interaction history. This globally-distributed, multi-model database service ensures high data availability, consistency, and enables rapid information retrieval for seamless user experiences.</p>
-<!--<img src="https://github.com/pratik3155/TextAnalyzer/blob/main/Screenshots/translator-db.png" alt="azure-mysql-db-service"></img><br>-->
+<img src="./screenshots/translator-db.png" alt="azure-mysql-db-service"></img><br>
 
 <h3>Azure AI Translator Service</h3>
 <b>Description:</b><p align="justify">The Text Translator relies on Azure AI Translator Service, harnessing advanced natural language processing for precise and contextually fitting translations. This service acts as the powerhouse for the platform's language translation features, ensuring accuracy and relevance in the converted text.</p>
-<!--<img src="https://github.com/pratik3155/TextAnalyzer/blob/main/Screenshots/translator-db%20-%20Microsoft%20Azure%20-%20Google%20Chrome%2018-12-2023%2021_08_37.png" alt="azure-translator-ai-service"></img><br>-->
+<img src="./screenshots/translator.png" alt="azure-translator-ai-service"></img><br>
 
 
 <h3>Working Live Project Display</h3>
 <b>Description:</b><p align="justify">I am providing the enclosed screenshot of the finalized operational website for your reference and review purposes.</p>
-<!--<img src="https://github.com/pratik3155/TextAnalyzer/blob/main/Screenshots/TextAnalyzer.png" alt="final-project-demo"></img>-->
+<img src="./screenshots/text-translator.png" alt="final-project-demo"></img>
 
 
 <h3>Resource Visualizer</h3>
 <b>Description:</b><p align="justify">Attached herewith is the resource visualizer screenshot, presenting an overview of the utilized resources for reference and documentation purposes.</p>
-<!--<img src="https://github.com/pratik3155/TextAnalyzer/blob/main/Screenshots/Resource%20visualizer.png" alt="resource-display"></img>-->
+<img src="./screenshots/resource-visu.png" alt="resource-display"></img>
 
 
 
