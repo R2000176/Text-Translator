@@ -70,7 +70,7 @@ try:
             print("The Result : ", result)
 
             if email == result["email"] and password == result["password"]:
-                   return render_template("results.html")
+                   return render_template("results.html", all_translations=getAllDocs())
 
             else:
                 return render_template("login.html")
@@ -150,6 +150,7 @@ try:
 
     @app.route('/results', methods=['GET'])
     def render_result():
+        print("All Docs : ", getAllDocs())
         return render_template("results.html", all_translations=getAllDocs())
         
 
