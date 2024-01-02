@@ -1,5 +1,5 @@
 <h1>Microsoft-Future-Ready-Talent-Virtual-Internship-Project</h1>
-<h2>Project Title: Text Translator</h2><a href="https://text--translator.azurewebsites.net/">Text Translator</a>
+<h2>Project Title: Text Translator<a href="https://text--translator.azurewebsites.net/">Text Translator</a></h2>
 <br>
 <h2>Project Details</h2>
 <b>Project Demo URL :</b><a gref="https://text--translator.azurewebsites.net/">https://text--translator.azurewebsites.net/</a><br>
