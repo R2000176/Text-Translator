@@ -30,7 +30,7 @@ app.secret_key = os.environ.get('FLASK_SECRET_KEY', 'random')
 
 
  # Load the values from .env    
-key = "def0a9a087384e26be475a0294b7b09e"
+key = "2db679fc633e44bca150b7d28f6fbf3f"
 endpoint = "https://api.cognitive.microsofttranslator.com/"
 location = "westus2"
 
